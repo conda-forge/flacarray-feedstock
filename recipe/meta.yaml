@@ -50,8 +50,8 @@ test:
   requires:
     - mpi4py
   commands:
-    - OMP_NUM_THREADS=2 python -c 'import flacarray.tests; flacarray.tests.run()'
-    - OMP_NUM_THREADS=1 mpirun -np 2 python -c 'import flacarray.tests; flacarray.tests.run()'
+    - OMP_NUM_THREADS=2 python -c 'import flacarray.tests; flacarray.tests.run()' # [build_platform == target_platform]
+    - OMP_NUM_THREADS=1 mpirun -np 2 python -c 'import flacarray.tests; flacarray.tests.run()' # [build_platform == target_platform]
 
 about:
   home: https://github.com/hpc4cmb/flacarray
